@@ -165,4 +165,10 @@ def sobel_lap(im):
     #   - Lap. Neg. maximal 25%-window grayscale Avg (sobelv_gmax50)
     array_out[10]= gmax(lapneg_g,.5)
     
+    # Normalization step
+    max_vals = np.array([4.782548828, 255,         2.397148438, 2.181048177,
+                         2.479327257, 89.23580187, 64.46461914,	3.92578125,
+                         5.617124782, 13.90416667, 8.107815735])
+    array_out /= max_vals
+
     return array_out, headers
